@@ -1,0 +1,5 @@
+# Collector specific configuration
+dataset_maintainer: {{cookiecutter.dataset_maintainer}}
+dataset_organization:  {{cookiecutter.dataset_organization}}
+dataset_expected_update_frequency: {{cookiecutter.dataset_expected_update_frequency}}
+dataset_notes: {{cookiecutter.dataset_notes}}

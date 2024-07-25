@@ -1,0 +1,13 @@
+{
+  "scraper_name": "scraper name, lowercase with underscores",
+  "dataset_source": "Proper name of source organization",
+  "license_id": "cc-by",
+  "methodology": "Other",
+  "methodology_other": "TBD",
+  "caveats": "None",
+  "private": "False",
+  "dataset_maintainer": "dataset maintainer HDX ID",
+  "dataset_organization": "dataset organization HDX ID",
+  "dataset_expected_update_frequency": "update frequency",
+  "dataset_notes": "dataset notes"
+}

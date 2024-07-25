@@ -1,0 +1,7 @@
+license_id: {{cookiecutter.license_id}}
+methodology: {{cookiecutter.methodology}}
+methodology_other: {{cookiecutter.methodology_other}}
+caveats: {{cookiecutter.caveats}}
+dataset_source: {{cookiecutter.dataset_source}}
+package_creator: HDX Data Systems Team
+private: {{cookiecutter.private}}

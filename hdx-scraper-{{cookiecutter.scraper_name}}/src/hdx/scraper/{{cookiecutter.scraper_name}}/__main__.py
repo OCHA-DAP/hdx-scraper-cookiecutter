@@ -6,7 +6,7 @@ script then creates in HDX.
 """
 
 import logging
-from os.path import expanduser, join
+from os.path import dirname, expanduser, join
 
 from hdx.api.configuration import Configuration
 from hdx.facades.infer_arguments import facade
@@ -20,6 +20,7 @@ logger = logging.getLogger(__name__)
 
 _USER_AGENT_LOOKUP = "hdx-scraper-{{cookiecutter.scraper_name}}"
 _SAVED_DATA_DIR = "saved_data"  # Keep in repo to avoid deletion in /tmp
+_UPDATED_BY_SCRIPT = "HDX Scraper: {{cookiecutter.scraper_name}}"
 
 
 def main(
@@ -47,6 +48,21 @@ def main(
                 use_saved=use_saved,
             )
             configuration = Configuration.read()
+            #
+            # Steps to generate dataset
+            #
+            dataset.update_from_yaml(
+                path=join(
+                    dirname(__file__), "config", "hdx_dataset_static.yaml"
+                )
+            )
+            dataset.create_in_hdx(
+                remove_additional_resources=True,
+                match_resource_order=False,
+                hxl_update=False,
+                updated_by_script=_UPDATED_BY_SCRIPT,
+                batch=info["batch"],
+            )
 
 
 if __name__ == "__main__":
@@ -55,5 +71,6 @@ if __name__ == "__main__":
         hdx_site="dev",
         user_agent_config_yaml=join(expanduser("~"), ".useragents.yaml"),
         user_agent_lookup=_USER_AGENT_LOOKUP,
-        project_config_yaml=join(".config", "project_configuration.yaml"),
+        project_config_yaml=join(
+            dirname(__file__), "config", "project_configuration.yaml"
     )

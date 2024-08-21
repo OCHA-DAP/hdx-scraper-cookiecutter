@@ -6,7 +6,7 @@ Make sure you have the `cookiecutter` package installed.
 
 Navigate to the directory where you want to create the scraper, then execute:
 
-    cookiecutter path/to/hdx-scraper-cutter
+    cookiecutter path/to/hdx-scraper-cookiecutter
 
 Fill in the values as prompted. Cookiecutter will use these values to generate
 the project files and directories.

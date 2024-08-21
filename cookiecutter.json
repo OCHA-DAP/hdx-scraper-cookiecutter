@@ -8,5 +8,9 @@
   "dataset_maintainer": "dataset maintainer HDX ID",
   "dataset_organization": "dataset organization HDX ID",
   "dataset_expected_update_frequency": "update frequency",
-  "dataset_notes": "dataset notes"
+  "dataset_notes": "dataset notes",
+  "_copy_without_render": [
+    ".github/run-python-script.yaml",
+    ".github/run-python-tests.yaml"
+    ]
 }

@@ -10,12 +10,12 @@ from hdx.utilities.useragent import UserAgent
 
 class Test{{cookiecutter.scraper_name}}:
     @pytest.fixture(scope="function")
-    def configuration(self):
+    def configuration(self, config_dir):
         UserAgent.set_global("test")
         Configuration._create(
             hdx_read_only=True,
             hdx_site="prod",
-            project_config_yaml=join(".config", "project_configuration.yaml"),
+            project_config_yaml=join(config_dir, "project_configuration.yaml"),
         )
         return Configuration.read()
 
@@ -27,11 +27,16 @@ class Test{{cookiecutter.scraper_name}}:
     def input_dir(self, fixtures_dir):
         return join(fixtures_dir, "input")
 
+    @pytest.fixture(scope="class")
+    def config_dir(self, fixtures_dir):
+        return join("src", "hdx", "scraper", "{{cookiecutter.scraper_name}}", "config")
+
     def test_cesa(
         self,
         configuration,
         fixtures_dir,
-        input_dir
+        input_dir,
+        config_dir
     ):
         with temp_dir(
             "Test{{cookiecutter.scraper_name}}",
@@ -47,4 +52,7 @@ class Test{{cookiecutter.scraper_name}}:
                     save=False,
                     use_saved=True,
                 )
-                assert 1 == 1
+
+                dataset.update_from_yaml(
+                    path=join(config_dir, "hdx_dataset_static.yaml")
+                )

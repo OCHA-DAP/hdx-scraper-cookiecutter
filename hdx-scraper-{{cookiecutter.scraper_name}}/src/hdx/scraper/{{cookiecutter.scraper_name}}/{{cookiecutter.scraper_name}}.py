@@ -1,11 +1,5 @@
 #!/usr/bin/python
-"""
-WHO:
-------------
-
-Reads WHO API and creates datasets
-
-"""
+"""{{cookiecutter.scraper_name}} scraper"""
 
 import logging
 from typing import List, Optional

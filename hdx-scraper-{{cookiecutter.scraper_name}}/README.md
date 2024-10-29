@@ -40,7 +40,7 @@ For the script to run, you will need to have a file called
 To install and run, execute:
 
     pip install .
-    python -m hdx.scraper.{{cookiecutter.scrapername}}
+    python -m hdx.scraper.{{cookiecutter.scraper_name}}
 
 ## Environment
 

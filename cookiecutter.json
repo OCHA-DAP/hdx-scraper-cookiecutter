@@ -10,7 +10,7 @@
   "dataset_expected_update_frequency": "update frequency",
   "dataset_notes": "dataset notes",
   "_copy_without_render": [
-    ".github/run-python-script.yaml",
-    ".github/run-python-tests.yaml"
+    ".github/workflows/run-python-script.yaml",
+    ".github/workflows/run-python-tests.yaml"
     ]
 }

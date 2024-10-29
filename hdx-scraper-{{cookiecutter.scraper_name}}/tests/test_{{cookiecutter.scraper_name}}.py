@@ -31,7 +31,7 @@ class Test{{cookiecutter.scraper_name}}:
     def config_dir(self, fixtures_dir):
         return join("src", "hdx", "scraper", "{{cookiecutter.scraper_name}}", "config")
 
-    def test_cesa(
+    def test_{{cookiecutter.scraper_name}}(
         self,
         configuration,
         fixtures_dir,

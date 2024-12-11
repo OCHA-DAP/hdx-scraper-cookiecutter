@@ -41,7 +41,7 @@ class {{cookiecutter.scraper_name}}:
         )
 
         dataset.set_time_period(dataset_time_period)
-        dataset.add_tagsa(dataset_tags)
+        dataset.add_tags(dataset_tags)
         # Only if needed
         dataset.set_subnational(True)
         try:

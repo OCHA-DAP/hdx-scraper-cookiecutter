@@ -9,6 +9,7 @@ import logging
 from os.path import dirname, expanduser, join
 
 from hdx.api.configuration import Configuration
+from hdx.data.user import User
 from hdx.facades.infer_arguments import facade
 from hdx.utilities.downloader import Download
 from hdx.utilities.path import (
@@ -36,6 +37,10 @@ def main(
     Returns:
         None
     """
+    configuration = Configuration.read()
+    if not User.check_current_user_organization_access("<insert org name>", "create_dataset"):
+        raise PermissionError("API Token does not give access to <insert org title> organisation!")
+
     with wheretostart_tempdir_batch(folder=_USER_AGENT_LOOKUP) as info:
         temp_dir = info["folder"]
         with Download() as downloader:
@@ -47,7 +52,6 @@ def main(
                 save=save,
                 use_saved=use_saved,
             )
-            configuration = Configuration.read()
             #
             # Steps to generate dataset
             #

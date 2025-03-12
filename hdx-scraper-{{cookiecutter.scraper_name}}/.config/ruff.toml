@@ -8,6 +8,9 @@ select = [
   "F",   # pyflakes - default
   "I"    # isort
 ]
+ignore = [
+    "E501" # Line too long
+]
 
 [lint.isort]
 known-local-folder = ["hdx.scraper.{{cookiecutter.scraper_name}}"]

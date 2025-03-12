@@ -43,14 +43,6 @@ To install and run, execute:
     pip install .
     python -m hdx.scraper.{{cookiecutter.scraper_name}}
 
-## Environment
-
-Development is currently done using Python 3.11. We recommend using a virtual
-environment such as ``venv``:
-
-    python3.12 -m venv venv
-    source venv/bin/activate
-
 ### Pre-commit
 
 Be sure to install `pre-commit`, which is run every time
@@ -69,8 +61,7 @@ the first line that begins with `ARGS` to:
     ARGS=(hook-impl --config=.config/pre-commit-config.yaml --hook-type=pre-commit)
 
 With pre-commit, all code is formatted according to
-[black]("https://github.com/psf/black") and
-[ruff]("https://github.com/charliermarsh/ruff") guidelines.
+[ruff](https://docs.astral.sh/ruff/) guidelines.
 
 To check if your changes pass pre-commit without committing, run:
 
@@ -86,18 +77,34 @@ To run the tests and view coverage, execute:
 
 `    pytest -c .config/pytest.ini --cov hdx --cov-config .config/coveragerc
 `
-### Packages
+## Packages
 
-[pip-tools](https://github.com/jazzband/pip-tools) is used for
+[uv](https://github.com/astral-sh/uv) is used for
 package management.  If you’ve introduced a new package to the
-source code please add it to the `dependencies` section of
+source code (i.e.anywhere in `src/`), please add it to the
+`project.dependencies` section of
 `pyproject.toml` with any known version constraints.
 
-For adding packages for testing, add them to
-the `test` sections under `[project.optional-dependencies]`.
+For adding packages for testing, add them to the `test` section under 
+`[project.optional-dependencies]`.
 
 Any changes to the dependencies will be automatically reflected in
-`requirements.txt` and `requirements-test.txt` with `pre-commit`,
-but you can re-generate the file without committing by executing:
+`requirements.txt` with `pre-commit`, but you can re-generate
+the file without committing by executing:
 
     pre-commit run pip-compile --all-files --config=.config/pre-commit-config.yaml
+
+## Project
+
+[Hatch](https://hatch.pypa.io/) is used for project management. The project
+can be built using:
+
+    hatch build
+
+Linting and syntax checking can be run with:
+
+    hatch fmt --check
+
+Tests can be executed using:
+
+    hatch test

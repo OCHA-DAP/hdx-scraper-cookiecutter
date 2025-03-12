@@ -32,8 +32,9 @@ For the script to run, you will need to have a file called
 
  You will also need to supply the universal .useragents.yaml file in your home
  directory as specified in the parameter *user_agent_config_yaml* passed to
- facade in run.py. The collector reads the key **hdx-scraper-{{cookiecutter.scraper_name}}** as specified
- in the parameter *user_agent_lookup*.
+ facade in run.py. The collector reads the key 
+ **hdx-scraper-{{cookiecutter.scraper_name}}** as specified in the parameter 
+ *user_agent_lookup*.
 
  Alternatively, you can set up environment variables: `USER_AGENT`, `HDX_KEY`,
 `HDX_SITE`, `EXTRA_PARAMS`, `TEMP_DIR`, and `LOG_FILE_ONLY`.
@@ -54,7 +55,7 @@ pre-commit install
 ```
 
 The configuration file for this project is in a
-non-start location. Thus, you will need to edit your
+non-standard location. Thus, you will need to edit your
 `.git/hooks/pre-commit` file to reflect this. Change
 the first line that begins with `ARGS` to:
 
@@ -82,15 +83,15 @@ To run the tests and view coverage, execute:
 [uv](https://github.com/astral-sh/uv) is used for
 package management.  If you’ve introduced a new package to the
 source code (i.e.anywhere in `src/`), please add it to the
-`project.dependencies` section of
-`pyproject.toml` with any known version constraints.
+`project.dependencies` section of `pyproject.toml` with any known version 
+constraints.
 
-For adding packages for testing, add them to the `test` section under 
+To add packages required only for testing, add them to the `test` section under 
 `[project.optional-dependencies]`.
 
 Any changes to the dependencies will be automatically reflected in
-`requirements.txt` with `pre-commit`, but you can re-generate
-the file without committing by executing:
+`requirements.txt` and `requirements-test.txt` with `pre-commit`, but you can 
+re-generate the files without committing by executing:
 
     pre-commit run pip-compile --all-files --config=.config/pre-commit-config.yaml
 

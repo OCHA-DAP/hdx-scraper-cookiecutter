@@ -32,8 +32,8 @@ For the script to run, you will need to have a file called
 
  You will also need to supply the universal .useragents.yaml file in your home
  directory as specified in the parameter *user_agent_config_yaml* passed to
- facade in run.py. The collector reads the key 
- **hdx-scraper-{{cookiecutter.scraper_name}}** as specified in the parameter 
+ facade in run.py. The collector reads the key
+ **hdx-scraper-{{cookiecutter.scraper_name}}** as specified in the parameter
  *user_agent_lookup*.
 
  Alternatively, you can set up environment variables: `USER_AGENT`, `HDX_KEY`,
@@ -83,14 +83,14 @@ To run the tests and view coverage, execute:
 [uv](https://github.com/astral-sh/uv) is used for
 package management.  If you’ve introduced a new package to the
 source code (i.e.anywhere in `src/`), please add it to the
-`project.dependencies` section of `pyproject.toml` with any known version 
+`project.dependencies` section of `pyproject.toml` with any known version
 constraints.
 
-To add packages required only for testing, add them to the `test` section under 
+To add packages required only for testing, add them to the `test` section under
 `[project.optional-dependencies]`.
 
 Any changes to the dependencies will be automatically reflected in
-`requirements.txt` and `requirements-test.txt` with `pre-commit`, but you can 
+`requirements.txt` and `requirements-test.txt` with `pre-commit`, but you can
 re-generate the files without committing by executing:
 
     pre-commit run pip-compile --all-files --config=.config/pre-commit-config.yaml

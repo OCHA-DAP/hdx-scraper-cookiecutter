@@ -38,8 +38,12 @@ def main(
         None
     """
     configuration = Configuration.read()
-    if not User.check_current_user_organization_access("<insert org name>", "create_dataset"):
-        raise PermissionError("API Token does not give access to <insert org title> organisation!")
+    if not User.check_current_user_organization_access(
+        "<insert org name>", "create_dataset"
+    ):
+        raise PermissionError(
+            "API Token does not give access to <insert org title> organisation!"
+        )
 
     with wheretostart_tempdir_batch(folder=_USER_AGENT_LOOKUP) as info:
         temp_dir = info["folder"]
@@ -76,5 +80,6 @@ if __name__ == "__main__":
         user_agent_config_yaml=join(expanduser("~"), ".useragents.yaml"),
         user_agent_lookup=_USER_AGENT_LOOKUP,
         project_config_yaml=join(
-            dirname(__file__), "config", "project_configuration.yaml"),
+            dirname(__file__), "config", "project_configuration.yaml"
+        ),
     )

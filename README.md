@@ -49,14 +49,14 @@ non-standard location. Thus, you will need to edit your
 `.git/hooks/pre-commit` file to reflect this. Change
 the first line that begins with `ARGS` to:
 
-    ARGS=(hook-impl --config=.config/pre-commit-config.yaml --hook-type=pre-commit)
+    ARGS=(hook-impl --hook-type=pre-commit)
 
 With pre-commit, all code is formatted according to
 [ruff](https://docs.astral.sh/ruff/) guidelines.
 
 To check if your changes pass pre-commit without committing, run:
 
-    pre-commit run --all-files --config=.config/pre-commit-config.yaml
+    pre-commit run --all-files
 
 ## Packages
 
@@ -69,4 +69,4 @@ Any changes to the dependencies will be automatically reflected in
 `requirements.txt` with `pre-commit`,
 but you can re-generate the file without committing by executing:
 
-    pre-commit run pip-compile --all-files --config=.config/pre-commit-config.yaml
+    pre-commit run pip-compile --all-files

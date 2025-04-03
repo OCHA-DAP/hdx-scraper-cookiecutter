@@ -19,9 +19,7 @@ def input_dir(fixtures_dir):
 
 @pytest.fixture(scope="session")
 def config_dir(fixtures_dir):
-    return join(
-        "src", "hdx", "scraper", "{{cookiecutter.scraper_name}}", "config"
-    )
+    return join("src", "hdx", "scraper", "{{cookiecutter.scraper_name}}", "config")
 
 
 @pytest.fixture(scope="session")

@@ -76,7 +76,7 @@ Ensure you have the required packages to run the tests:
 
 To run the tests and view coverage, execute:
 
-`    pytest -c .config/pytest.ini --cov hdx
+`    pytest -c --cov hdx
 `
 ## Packages
 

@@ -13,7 +13,7 @@ Development is currently done using Python 3.12. We recommend using a virtual
 environment such as ``venv``:
 
 ```shell
-    python3.12 -m venv venv
+    python -m venv venv
     source venv/bin/activate
 ```
 

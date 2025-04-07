@@ -12,12 +12,16 @@ This script ...
 Development is currently done using Python 3.12. We recommend using a virtual
 environment such as ``venv``:
 
+```shell
     python3.12 -m venv venv
     source venv/bin/activate
+```
 
 In your virtual environment, install all packages for development by running:
 
+```shell
     pip install -r requirements.txt
+```
 
 ### Installing and running
 
@@ -40,16 +44,18 @@ For the script to run, you will need to have a file called
 
 To install and run, execute:
 
+```shell
     pip install .
     python -m hdx.scraper.{{cookiecutter.scraper_name}}
+```
 
 ### Pre-commit
 
 Be sure to install `pre-commit`, which is run every time you make a git commit:
 
 ```shell
-pip install pre-commit
-pre-commit install
+    pip install pre-commit
+    pre-commit install
 ```
 
 With pre-commit, all code is formatted according to
@@ -57,17 +63,23 @@ With pre-commit, all code is formatted according to
 
 To check if your changes pass pre-commit without committing, run:
 
+```shell
     pre-commit run --all-files
+```
 
 ### Testing
 
 Ensure you have the required packages to run the tests:
 
+```shell
     pip install -r requirements-test.txt
+```
 
 To run the tests and view coverage, execute:
 
+```shell
     pytest -c --cov hdx
+```
 
 ## Packages
 
@@ -83,18 +95,26 @@ Any changes to the dependencies will be automatically reflected in
 `requirements.txt` and `requirements-test.txt` with `pre-commit`, but you can 
 re-generate the files without committing by executing:
 
+```shell
     pre-commit run pip-compile --all-files
+```
 
 ## Project
 
 [Hatch](https://hatch.pypa.io/) is used for project management. The project can be built using:
 
+```shell
     hatch build
+```
 
 Linting and syntax checking can be run with:
 
+```shell
     hatch fmt --check
+```
 
 Tests can be executed using:
 
+```shell
     hatch test
+```

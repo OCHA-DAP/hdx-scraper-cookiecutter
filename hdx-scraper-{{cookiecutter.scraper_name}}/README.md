@@ -46,17 +46,15 @@ To install and run, execute:
 
 ### Pre-commit
 
-Be sure to install `pre-commit`, which is run every time
-you make a git commit:
+Be sure to install `pre-commit`, which is run every time you make a git commit:
 
 ```shell
 pip install pre-commit
 pre-commit install
 ```
 
-The configuration file for this project is in a
-non-standard location. Thus, you will need to edit your
-`.git/hooks/pre-commit` file to reflect this. Change
+The configuration file for this project is in a non-standard location. Thus, 
+you will need to edit your `.git/hooks/pre-commit` file to reflect this. Change
 the first line that begins with `ARGS` to:
 
     ARGS=(hook-impl --hook-type=pre-commit)
@@ -80,25 +78,23 @@ To run the tests and view coverage, execute:
 `
 ## Packages
 
-[uv](https://github.com/astral-sh/uv) is used for
-package management.  If you’ve introduced a new package to the
-source code (i.e.anywhere in `src/`), please add it to the
-`project.dependencies` section of `pyproject.toml` with any known version
-constraints.
+[uv](https://github.com/astral-sh/uv) is used for package management.  If 
+you’ve introduced a new package to the source code (i.e. anywhere in `src/`), 
+please add it to the `project.dependencies` section of `pyproject.toml` with 
+any known version constraints.
 
 To add packages required only for testing, add them to the `test` section under
 `[project.optional-dependencies]`.
 
 Any changes to the dependencies will be automatically reflected in
-`requirements.txt` and `requirements-test.txt` with `pre-commit`, but you can
+`requirements.txt` and `requirements-test.txt` with `pre-commit`, but you can 
 re-generate the files without committing by executing:
 
     pre-commit run pip-compile --all-files
 
 ## Project
 
-[Hatch](https://hatch.pypa.io/) is used for project management. The project
-can be built using:
+[Hatch](https://hatch.pypa.io/) is used for project management. The project can be built using:
 
     hatch build
 

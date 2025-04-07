@@ -15,8 +15,7 @@ environment such as ``venv``:
     python3.12 -m venv venv
     source venv/bin/activate
 
-In your virtual environment, please install all packages for
-development by running:
+In your virtual environment, install all packages for development by running:
 
     pip install -r requirements.txt
 
@@ -53,12 +52,6 @@ pip install pre-commit
 pre-commit install
 ```
 
-The configuration file for this project is in a non-standard location. Thus, 
-you will need to edit your `.git/hooks/pre-commit` file to reflect this. Change
-the first line that begins with `ARGS` to:
-
-    ARGS=(hook-impl --hook-type=pre-commit)
-
 With pre-commit, all code is formatted according to
 [ruff](https://docs.astral.sh/ruff/) guidelines.
 
@@ -74,8 +67,8 @@ Ensure you have the required packages to run the tests:
 
 To run the tests and view coverage, execute:
 
-`    pytest -c --cov hdx
-`
+    pytest -c --cov hdx
+
 ## Packages
 
 [uv](https://github.com/astral-sh/uv) is used for package management.  If 

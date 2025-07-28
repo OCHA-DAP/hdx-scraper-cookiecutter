@@ -9,7 +9,7 @@ This script ...
 
 ### Environment
 
-Development is currently done using Python 3.12. We recommend using a virtual
+Development is currently done using Python 3.13. We recommend using a virtual
 environment such as ``venv``:
 
 ```shell
@@ -24,7 +24,6 @@ In your virtual environment, install all packages for development by running:
 ```
 
 ### Installing and running
-
 
 For the script to run, you will need to have a file called
 .hdx_configuration.yaml in your home directory containing your HDX key, e.g.:

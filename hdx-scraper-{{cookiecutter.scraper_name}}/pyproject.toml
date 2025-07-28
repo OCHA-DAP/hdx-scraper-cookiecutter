@@ -10,9 +10,10 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hdx-scraper-{{cookiecutter.scraper_name}}"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
   "hdx-python-api",
+  "hdx-python-country",
   "hdx-python-utilities",
 ]
 

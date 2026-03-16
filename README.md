@@ -1,3 +1,4 @@
+# DEPRECATED - use the [copier template](https://github.com/OCHA-DAP/hdx-scraper-copier) instead
 # Cookie Cutter for HDX Python Scrapers
 
 ## Usage
